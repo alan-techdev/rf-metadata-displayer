@@ -16,8 +16,8 @@ maintainers = [{name="Iso"}, {name="Alan"}] # must be an object
 license = "AGPL-3.0-only"
 readme = {file = "README.rst", content-type = "text/x-rst"}
 
-homepage = "https://github.com/alanmehio/rf-metadata-displayer"
-repository = "https://github.com/alanmehio/rf-metadata-displayer"
+homepage = "https://github.com/alan-techdev/rf-metadata-displayer"
+repository = "https://github.com/alan-techdev/rf-metadata-displayer"
 documentation = "https://rf-metadata-displayer.readthedocs.io/"
 
 keywords = [
@@ -48,11 +48,11 @@ classifiers = [
 
 
 # PyPi url links, that appear in 'Project Links' section
-urls."Bug Tracker" = "https://github.com/alanmehio/rf-metadata-displayer/issues"
-urls."CI: Github Actions" = "https://github.com/alanmehio/rf-metadata-displayer/actions"
+urls."Bug Tracker" = "https://github.com/alan-techdev/rf-metadata-displayer/issues"
+urls."CI: Github Actions" = "https://github.com/alan-techdev/rf-metadata-displayer/actions"
 urls.Documentation = "https://rf-metadata-displayer.readthedocs.io/"
-urls."Source Code" = "https://github.com/alanmehio/rf-metadata-displayer"
-urls.Changelog = "https://github.com/alanmehio/rf-metadata-displayer/blob/master/CHANGELOG.rst"
+urls."Source Code" = "https://github.com/alan-techdev/rf-metadata-displayer"
+urls.Changelog = "https://github.com/alan-techdev/rf-metadata-displayer/blob/master/CHANGELOG.rst"
 
 
 

@@ -10,7 +10,7 @@
 
 .. code-block:: shell
 
-    git clone git@github.com:alanmehio/rf-surveillance-node.git
+    git clone git@github.com:alan-techdev/rf-surveillance-node.git
     cd  rf-surveillance-node
 
 | Make the project in edit mode  
