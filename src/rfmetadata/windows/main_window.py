@@ -8,14 +8,14 @@ from rfmetadata.signal_manager.data_signal_manager import graph_type_manager, ta
 from rfmetadata.widgets.query_result_layout import TableResultsWidget
 
 class MainWindow(QMainWindow):
-   def __init__(self):
+   def __init__(self) -> None:
         super().__init__()
 
         self.result_window= "in_window"
         
         self.setup_ui()
         
-   def setup_ui(self):
+   def setup_ui(self) -> None:
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
 
@@ -43,13 +43,13 @@ class MainWindow(QMainWindow):
         layout.addWidget(result_widget)
 
 
-        self.setWindowTitle("Rf Metadata Displayer")
+        self.setWindowTitle("Rf Metadata Display")
         self.resize(800, 600)
         
         self.create_menu()
         
 
-   def create_menu(self):
+   def create_menu(self) -> None:
        global menubar
        menubar = self.menuBar()
    
@@ -66,7 +66,7 @@ class MainWindow(QMainWindow):
        help_menu.addAction(about_action)
 
 
-       # parrent menu
+       # parent menu
        tool_menu = menubar.addMenu("Tools")
        select_graph_menu = tool_menu.addMenu("Graph")
 
@@ -110,7 +110,7 @@ class MainWindow(QMainWindow):
        select_table_menu.addAction(table_option_b)
 
 
-   def _show_about(self):
+   def _show_about(self) -> None:
       QtWidgets.QMessageBox.about(self, "About", "RF Sink Viewer using PySide6\nTips:\n1-")
 
    def set_scatter(self):

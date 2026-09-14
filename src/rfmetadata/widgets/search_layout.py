@@ -6,7 +6,7 @@ import requests
 
 class SearchGroupBox(QGroupBox):
     
-    def __init__(self, parent=None):
+    def __init__(self, parent=None) -> None:
 
         self.min_power = 20.0
         self.max_power = 60.0
@@ -16,7 +16,7 @@ class SearchGroupBox(QGroupBox):
         super().__init__(parent)
         self.setup_ui()
         
-    def setup_ui(self):
+    def setup_ui(self) -> None:
 
         layout = QGridLayout()
         self.setLayout(layout)
@@ -87,7 +87,7 @@ class SearchGroupBox(QGroupBox):
 
         self.button.clicked.connect(self.search_database)
         
-    def search_database(self): 
+    def search_database(self) -> None: 
         min_power = self.min_power_spin.value()
         max_power = self.max_power_spin.value()
         min_frequency = self.min_frequency_spin.value()

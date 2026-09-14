@@ -33,7 +33,7 @@ class DataGraph3D(FigureCanvas):
 
         
                     
-    def receive_data(self, data):
+    def receive_data(self, data) -> None:
         self.data = data
         self.freq.clear()
         self.pow.clear()
@@ -47,12 +47,12 @@ class DataGraph3D(FigureCanvas):
 
         self.draw_graph()
 
-    def set_type(self, type):
+    def set_type(self, type:str) -> None:
         self.type = type
         self.draw_graph()
 
     
-    def draw_graph(self):
+    def draw_graph(self) -> None:
 
         if not (self.freq and self.pow and self.time):
             return
@@ -151,5 +151,3 @@ class DataGraph3D(FigureCanvas):
             self.figure.autofmt_xdate()
 
             self.draw()
-
-

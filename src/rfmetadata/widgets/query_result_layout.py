@@ -3,7 +3,7 @@ from PySide6.QtCore import Qt
 from rfmetadata.signal_manager.data_signal_manager import signal_manager
 
 class TableResultsWidget(QTableWidget):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         
         self.result = ""
@@ -16,21 +16,14 @@ class TableResultsWidget(QTableWidget):
         self.setRowCount(20)
         self.setHorizontalHeaderLabels(["ID", "frequency", "power", "datetime"])
 
-    def set_result(self, data):
+    def set_result(self, data) -> None:
        self.result = data
        self.setup_ui(self.result)
 
-    def setup_ui(self, query):
+    def setup_ui(self, query) -> None:
         self.setRowCount(len(query))
         for row, row_data in enumerate(query):
             for col, data in enumerate(row_data):
                 item = QTableWidgetItem(str(data))
                 item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
                 self.setItem(row, col, item)
-
-
-
-        
-        
-
-
