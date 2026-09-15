@@ -22,7 +22,7 @@ MatchData = t.Union[
 
 
 DEMO_SECTION: str = (
-    "[tool.software-release]\nversion_variable = " "src/rfnode/__init__.py:__version__"
+    "[tool.software-release]\nversion_variable = " "src/rfmetadata/__init__.py:__version__"
 )
 TOML = 'pyproject.toml'
 

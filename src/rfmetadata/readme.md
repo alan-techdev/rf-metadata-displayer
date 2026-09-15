@@ -1,4 +1,4 @@
-# This is an overview on how rfmetadata is working Alan Check ????
+# This is an overview on how rfmetadata is working
 
 ## Folders
 
@@ -6,7 +6,7 @@ The work is separated into folder:
 
 ### database folder
 This folder is responsible for the modules that query the database. It contains the files:
-    1- database_query.py: This file contains the databasemanager class which queries the database using the method search_power_frequency() and returns the result.
+    1- database_query.py: This file contains the database manager class which queries the database using the method search_power_frequency() and returns the result.
 
 ### widgets folder:
 This folder contains all the different widgets that will be added into the main window later. It contains the files:
@@ -25,20 +25,20 @@ And the user gets a beautiful clean window for the result.
 
 ### signal_manager folder:
 This folder contains:
-    1- data_signal_manager.py: This module creates two signal managers objects that i use to send (the result of the query to the data_graph_layout.py to be drawn) and (the type of the type of the graph taken from the mainwindow).
+    1- data_signal_manager.py: This module creates two signal managers objects that i use to send (the result of the query to the data_graph_layout.py to be drawn) and (the type of the type of the graph taken from the main window).
 
 ## main
 
-In the main.py, I added an arg parser for the "--version" . This way rfsink --version will give the user the current version of our application.
+In the main.py, I added an arg parser for the "--version" . This way rfmetadata --version will give the user the current version of our application.
 And called the main_window class to create our main gui.
 
-## how execute the RF-Sink Desktop application
+## how execute the RF-metadata-displayer Desktop application
 * Create and activate a virtual environment 
-* Go to the root folder of the project (rf-surveillance)
+* Go to the root folder of the project (rf-metadata)
 
 ```
 $ pip install -e .
-$ rfsink
+$ rfmetadata
 ```
 
 

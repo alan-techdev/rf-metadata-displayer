@@ -1,5 +1,5 @@
 
-| Insall `pip` 
+| Install `pip` 
  
 .. code-block:: shell
 

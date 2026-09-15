@@ -26,26 +26,26 @@ from rfmetadata.windows.main_window import MainWindow
 """
 A- Make the project in edit mode
 $ pwd
-/home/alan/workspace-python/RTL-SDR/rf-surveillance
+/home/alan/workspace-python/RTL-SDR/rf-metadata-displayer
 $ pip install -e .
-$ rfnode setting.json -vvv -ld /home/alan/tmp
+$ rfmetadata setting.json -vvv -ld /home/alan/tmp
 
 //////////////////////////////////////////
 
 B- Using PYTHONPATH (Not recommended)
 Linux:
 =====
-$ export PYTHONPATH=/home/alan/workspace-python/RTL-SDR/rf-surveillance/src
+$ export PYTHONPATH=/home/alan/workspace-python/RTL-SDR/rf-metadata-displayer/src
 $ pwd
- /home/alan/workspace-python/RTL-SDR/rf-surveillance/src
-$ python rfnode setting.json -vvv -ld /home/alan/tmp
+ /home/alan/workspace-python/RTL-SDR/rf-metadata-displayer/src
+$ python rfmetadata setting.json -vvv -ld /home/alan/tmp
 
 Windows:
 ========
-set PYTHONPATH=/home/alan/workspace-python/RTL-SDR/rf-surveillance/src
+set PYTHONPATH=/home/alan/workspace-python/RTL-SDR/rf-metadata-displayer/src
 echo %PYTHONPATH%
-python rfnode setting.json -vvv -ld /home/alan/tmp
-Note: Check the devicemanager from the control panel for the port name
+python rfmetadata setting.json -vvv -ld /home/alan/tmp
+Note: Check the device manager from the control panel for the port name
 """
 def main()-> None:
 

@@ -38,7 +38,7 @@ def get_templated_vars():
         (),
         dict(
             project_slug='rf-metadata-displayer',
-            package_name='rfnode',
+            package_name='rfmetadata',
             author_name='Alan',
             year='2025',
             version='1.0.0',

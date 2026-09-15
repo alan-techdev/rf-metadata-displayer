@@ -41,7 +41,7 @@ See [Contributor Setup](#Setting-Up-the-Code-for-Local-Development) to get start
 
 ### Write Documentation
 
-rf surveillance could always use more documentation, whether as part of the official rf surveillance docs, in docstrings, etc.
+rf surveillance could always use more documentation, whether as part of the official rf surveillance docs, in doc strings, etc.
 
 If you want to review your changes on the documentation locally, you can do:
 

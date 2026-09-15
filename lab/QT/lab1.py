@@ -1,8 +1,8 @@
 '''
-$ export PYTHONPATH=/home/alan/workspace-python/RTL-SDR/rf-surveillance/src
+$ export PYTHONPATH=/home/alan/workspace-python/RTL-SDR/rfmetadata/src
 $ pwd 
- /home/alan/workspace-python/RTL-SDR/rf-surveillance/src
-$ python rfsink ???
+ /home/alan/workspace-python/RTL-SDR/rfmetadata/src
+$ python rfmetadata ???
 '''
 
 import sys
@@ -33,7 +33,7 @@ def main()-> None:
 
    widget = MyWidget()
    widget.resize(800,600)
-   widget.setWindowTitle("RFsink")
+   widget.setWindowTitle("RFDisplay")
    widget.show()
 
    sys.exit(app.exec())
