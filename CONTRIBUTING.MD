@@ -17,9 +17,9 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at [https://github.com/alan-techdev/rf-surveillance/issues](https://github.com/alan-techdev/rf-surveillance/issues).
+Report bugs at [https://github.com/alan-techdev/rf-metadata-displayer/issues](https://github.com/alan-techdev/rf-metadata-displayer/issues).
 
-Stumbling upon a Bug means encountering different behavior than the expected/advertised one. When you are reporting a bug, please include the following information by filling in [the template](https://github.com/alan-techdev/rf-surveillance/blob/main/.github/ISSUE_TEMPLATE/bug_report.md).
+Stumbling upon a Bug means encountering different behavior than the expected/advertised one. When you are reporting a bug, please include the following information by filling in [the template](https://github.com/alan-techdev/rf-metadata-displayer/blob/main/.github/ISSUE_TEMPLATE/bug_report.md).
 
 
 * Your operating system name and version.
@@ -55,7 +55,7 @@ You can open it in your browser at http://127.0.0.1:8000 !
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at [https://github.com/alan-techdev/rf-surveillance/issues](https://github.com/alan-techdev/rf-surveillance/issues).
+The best way to send feedback is to file an issue at [https://github.com/alan-techdev/rf-metadata-displayer/issues](https://github.com/alan-techdev/rf-metadata-displayer/issues).
 
 If you are proposing a feature:
 
@@ -65,22 +65,22 @@ If you are proposing a feature:
 
 ## Setting Up the Code for Local Development
 
-Here's how to set up `rf surveillance` for local development.
+Here's how to set up `rf metadata-displayer` for local development.
 
-1. Fork the `rf surveillance` repo on GitHub.
+1. Fork the `rf metadata-displayer` repo on GitHub.
 2. Clone your fork locally:
 
 ```bash
-git clone git@github.com:alan-techdev/rf-surveillance.git
+git clone git@github.com:alan-techdev/rf-metadata-displayer.git
 ```
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenv installed, this is how you set up your fork for local development with test dependencies:
 
 ```bash
-cd rf-surveillance
+cd rf-metadata-displayer
 virtualenv env --python=python3
 source env/bin/activate
-pip install -e .[test]
+pip install -e . [test]
 ```
 
 4. Create a branch for local development:
@@ -111,7 +111,28 @@ tox -e check && tox -e build
 
 You report will be placed to `htmlcov` directory. Please do not include this directory to your commits, accidentally.
 
-7. Commit your changes and push your branch to GitHub:
+7. CI/CD check 
+below are the command to use to make sure your CI/CD is green
+```bash
+#Do Type Checking
+tox -e type -v -s false
+
+# Test Suite Against Wheel
+tox -e wheel-test -s false
+
+# Combine Coverage (dev, sdist, wheel) & make Reports
+tox -e coverage --sitepackages -v -s false
+
+# Ruff check 
+tox -e check -v -s false
+
+# Static type Checking Dependencies
+tox -s false -e pin-deps 
+
+# Test suite 
+ tox -v -s false | tee test_output.log
+
+8. Commit your changes and push your branch to GitHub:
 
 ```bash
 git add .
@@ -119,7 +140,7 @@ git commit -m "Your detailed description of your changes."
 git push origin name-of-your-bugfix-or-feature
 ```
 
-8. Submit a pull request through the GitHub website.
+9. Submit a pull request through the GitHub website.
 
 ## Contributor Guidelines
 
@@ -231,7 +252,7 @@ For other issues: encourage friendly discussion, moderate debate, offer your tho
 
 ### Process: Roadmap
 
-The roadmap(issues) located [here](https://github.com/alan-techdev/rf-surveillance/issues)
+The roadmap(issues) located [here](https://github.com/alan-techdev/rf-metadata-displayer/issues)
 
 Due dates are flexible.
 

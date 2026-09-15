@@ -8,19 +8,20 @@ Steps:
 
 '''
 import sys
-from PySide6 import QtWidgets
-from rfmetadata.windows.main_window import MainWindow
 from argparse import ArgumentParser, Namespace
 
+from PySide6 import QtWidgets
+
 from rfmetadata import (
-    __author__,  # type:ignore
-    __description__,  # type:ignore
-    __license__,  # type:ignore
-    __title__,  # type:ignore
-    __url__,  # type:ignore
-    __version__,  # type:ignore
-)
+    __author__,
+    __description__,
+    __license__,
+    __title__,
+    __url__,
+    __version__,
+)  # type:ignore
 from rfmetadata._help import bug_reporting
+from rfmetadata.windows.main_window import MainWindow
 
 """
 A- Make the project in edit mode
@@ -110,7 +111,7 @@ def main()-> None:
     if args.url:
         print(f"URL: {__url__}")
         return
-   
+
     app = QtWidgets.QApplication()
 
     widget = MainWindow()

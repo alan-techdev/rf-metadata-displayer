@@ -1,15 +1,15 @@
-from PySide6.QtWidgets import QMainWindow, QTableWidget, QTableWidgetItem
 from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QMainWindow, QTableWidget, QTableWidgetItem
+
 from rfmetadata.signal_manager.data_signal_manager import table_type_manager
 
-global window_type
-window_type = False
+result_window:QMainWindow
+window_type:bool = False
 
 class TableResultsWindow(QMainWindow):
-    def __init__(self, query):
+    def __init__(self, query:str) -> None:
         super().__init__()
         self.setWindowTitle("Query Results")
-        
         # Create table view
         self.table = QTableWidget()
         self.table.setColumnCount(4)
@@ -29,28 +29,22 @@ class TableResultsWindow(QMainWindow):
         self.table.setAlternatingRowColors(True)
         self.table.horizontalHeader().setStretchLastSection(True)
         self.table.resizeColumnsToContents()
-        
+
         self.setCentralWidget(self.table)
         self.resize(800, 600)
 
         table_type_manager.data_signal.connect(self.set_type)
 
-    def set_type(self, type):
-        global window_type 
+    def set_type(self, type:bool) -> None:
+        global window_type
         window_type = type
 
 # Usage:
-def show_query_results(query):
-
-    global window_type
+def show_query_results(query:str) -> None:
 
     global result_window
     result_window = TableResultsWindow(query)
-
     if window_type:
-
         result_window.show()
     else:
         pass
-
-

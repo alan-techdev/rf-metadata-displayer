@@ -1,12 +1,22 @@
-from PySide6.QtWidgets import QGroupBox, QGridLayout, QLabel, QPushButton, QDoubleSpinBox, QSpacerItem, QSizePolicy
-from PySide6.QtCore import QLocale, Qt
-from rfmetadata.windows.query_result_window import show_query_results
-from rfmetadata.signal_manager.data_signal_manager import signal_manager
 import requests
+from PySide6.QtCore import QLocale, Qt
+from PySide6.QtWidgets import (
+    QDoubleSpinBox,
+    QGridLayout,
+    QGroupBox,
+    QLabel,
+    QPushButton,
+    QSizePolicy,
+    QSpacerItem,
+)
+
+from rfmetadata.signal_manager.data_signal_manager import signal_manager
+from rfmetadata.windows.query_result_window import show_query_results
+
 
 class SearchGroupBox(QGroupBox):
-    
-    def __init__(self, parent=None) -> None:
+
+    def __init__(self, parent:QGroupBox=None) -> None:
 
         self.min_power = 20.0
         self.max_power = 60.0
@@ -15,17 +25,17 @@ class SearchGroupBox(QGroupBox):
 
         super().__init__(parent)
         self.setup_ui()
-        
+
     def setup_ui(self) -> None:
 
         layout = QGridLayout()
         self.setLayout(layout)
-        
+
         self.min_power_spin = QDoubleSpinBox()
         self.min_power_spin.setRange(self.min_power,self.max_power)
         self.min_power_spin.setValue(20.0)
         self.min_power_spin.setSingleStep(0.01)
-        self.min_power_spin.setDecimals(2) 
+        self.min_power_spin.setDecimals(2)
         self.min_power_spin.setLocale(QLocale(QLocale.English))
 
 
@@ -33,15 +43,15 @@ class SearchGroupBox(QGroupBox):
         self.max_power_spin.setRange(self.min_power,self.max_power)
         self.max_power_spin.setValue(self.max_power)
         self.max_power_spin.setSingleStep(0.01)
-        self.max_power_spin.setDecimals(2) 
+        self.max_power_spin.setDecimals(2)
         self.max_power_spin.setLocale(QLocale(QLocale.English))
 
-    
+
         self.min_frequency_spin = QDoubleSpinBox()
         self.min_frequency_spin.setRange(self.min_frequency,self.max_frequency)
         self.min_frequency_spin.setValue(self.min_frequency)
         self.min_frequency_spin.setSingleStep(0.01)
-        self.min_frequency_spin.setDecimals(2) 
+        self.min_frequency_spin.setDecimals(2)
         self.min_frequency_spin.setLocale(QLocale(QLocale.English))
 
 
@@ -49,7 +59,7 @@ class SearchGroupBox(QGroupBox):
         self.max_frequency_spin.setRange(self.min_frequency,self.max_frequency)
         self.max_frequency_spin.setValue(self.max_frequency)
         self.max_frequency_spin.setSingleStep(0.01)
-        self.max_frequency_spin.setDecimals(2) 
+        self.max_frequency_spin.setDecimals(2)
         self.max_frequency_spin.setLocale(QLocale(QLocale.English))
 
 
@@ -65,14 +75,14 @@ class SearchGroupBox(QGroupBox):
         self.error_message.setStyleSheet("QLabel { color : red}")
 
         self.button = QPushButton("Search")
-        
+
         layout.addWidget(self.power_label,0,0)
         layout.addItem(QSpacerItem(200, 0, QSizePolicy.Fixed, QSizePolicy.Minimum))
         layout.addWidget(self.min_power_label,0,1)
         layout.addWidget(self.min_power_spin,0,2)
         layout.addWidget(self.max_power_label,0,3)
-        layout.addWidget(self.max_power_spin,0,4)        
-        
+        layout.addWidget(self.max_power_spin,0,4)
+
         layout.addWidget(self.frequency_label,1,0)
         layout.addItem(QSpacerItem(200, 0, QSizePolicy.Fixed, QSizePolicy.Minimum))
         layout.addWidget(self.min_frequency_label,1,1)
@@ -86,8 +96,8 @@ class SearchGroupBox(QGroupBox):
 
 
         self.button.clicked.connect(self.search_database)
-        
-    def search_database(self) -> None: 
+
+    def search_database(self) -> None:
         min_power = self.min_power_spin.value()
         max_power = self.max_power_spin.value()
         min_frequency = self.min_frequency_spin.value()
@@ -105,5 +115,3 @@ class SearchGroupBox(QGroupBox):
                 show_query_results(result.json())
             else:
                 self.error_message.setText("No results !")
-        
-       

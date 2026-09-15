@@ -1,11 +1,16 @@
-from PySide6.QtWidgets import QWidget, QTableWidget, QTableWidgetItem, QHBoxLayout
 from PySide6.QtCore import Qt
+from PySide6.QtWidgets import (
+    QTableWidget,
+    QTableWidgetItem,
+)
+
 from rfmetadata.signal_manager.data_signal_manager import signal_manager
+
 
 class TableResultsWidget(QTableWidget):
     def __init__(self) -> None:
         super().__init__()
-        
+
         self.result = ""
         signal_manager.data_signal.connect(self.set_result)
             # Configure table
@@ -16,11 +21,11 @@ class TableResultsWidget(QTableWidget):
         self.setRowCount(20)
         self.setHorizontalHeaderLabels(["ID", "frequency", "power", "datetime"])
 
-    def set_result(self, data) -> None:
+    def set_result(self, data:str) -> None:
        self.result = data
        self.setup_ui(self.result)
 
-    def setup_ui(self, query) -> None:
+    def setup_ui(self, query:str) -> None:
         self.setRowCount(len(query))
         for row, row_data in enumerate(query):
             for col, data in enumerate(row_data):

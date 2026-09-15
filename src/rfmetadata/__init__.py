@@ -1,7 +1,5 @@
 """
-
- **RF Metadata Displayer**
-  
+ **RF Metadata Display**
 """
 
 from .__version__ import __author__ as __author__
