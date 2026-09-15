@@ -234,8 +234,3 @@ ignore_errors = false
 
 [tool.coverage.html]
 directory = "coverage_html_report"
-
-# see scripts/parse_version.py 
-# we need to update in toml file above  and below also
-[tool.software-release]
-version_variable = "src/rfmetadata/__init__.py:__version__"
