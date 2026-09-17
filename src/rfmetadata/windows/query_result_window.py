@@ -4,9 +4,10 @@ from PySide6.QtWidgets import QMainWindow, QTableWidget, QTableWidgetItem
 from rfmetadata.signal_manager.data_signal_manager import table_type_manager
 
 result_window:QMainWindow
-window_type:bool = False
+
 
 class TableResultsWindow(QMainWindow):
+    window_type:bool = False
     def __init__(self, query:str) -> None:
         super().__init__()
         self.setWindowTitle("Query Results")
@@ -36,15 +37,14 @@ class TableResultsWindow(QMainWindow):
         table_type_manager.data_signal.connect(self.set_type)
 
     def set_type(self, type:bool) -> None:
-        global window_type
-        window_type = type
+        TableResultsWindow.window_type = type
 
 # Usage:
 def show_query_results(query:str) -> None:
 
     global result_window
     result_window = TableResultsWindow(query)
-    if window_type:
+    if result_window.window_type:
         result_window.show()
     else:
         pass

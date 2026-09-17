@@ -114,7 +114,7 @@ class MainWindow(QMainWindow):
 
 
    def _show_about(self) -> None:
-      QtWidgets.QMessageBox.about(self, "About", "RF Sink Viewer using PySide6\nTips:\n1-")
+      QtWidgets.QMessageBox.about(self, "About", "RF Sink Viewer using PySide6")
 
    def set_scatter(self) -> None:
       graph_type_manager.data_signal.emit("scatter")
