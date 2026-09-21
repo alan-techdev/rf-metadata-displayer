@@ -2,7 +2,7 @@ import sys
 from unittest.mock import MagicMock, patch
 
 import pytest
-from src.rfmetadata import _help as bug_report
+from rfmetadata import _help as bug_report
 
 
 def test_implementation_cpython():

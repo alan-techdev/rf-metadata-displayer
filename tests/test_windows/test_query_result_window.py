@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QMainWindow
-from src.rfmetadata.windows.query_result_window import TableResultsWindow
+from rfmetadata.windows.query_result_window import TableResultsWindow
 
 
 def test_window_initialization(qtbot):

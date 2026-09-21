@@ -2,7 +2,7 @@ import sys
 from unittest.mock import MagicMock, patch
 
 import pytest
-from src.rfmetadata import main
+from rfmetadata import main
 
 
 @pytest.fixture(autouse=True)

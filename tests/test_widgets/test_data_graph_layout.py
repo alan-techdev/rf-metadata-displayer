@@ -2,7 +2,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 from matplotlib.figure import Figure
-from src.rfmetadata.widgets.data_graph_layout import DataGraph3D
+from rfmetadata.widgets.data_graph_layout import DataGraph3D
 
 
 @pytest.fixture(autouse=True)
