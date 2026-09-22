@@ -2,7 +2,7 @@ from datetime import datetime
 
 import matplotlib.dates as mdates
 import numpy as np
-from matplotlib import cm
+from matplotlib import colormaps, cm
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.colors import Normalize
 from matplotlib.figure import Figure
@@ -130,7 +130,7 @@ class DataGraph3D(FigureCanvas):
 
             # Normalizing frequency values for colormap
             norm = Normalize(vmin=min(self.freq), vmax=max(self.freq))
-            cmap = cm.get_cmap('viridis')
+            cmap = colormaps.get_cmap('viridis')
 
             # Plotting each segment with color based on frequency
             for i in range(len(self.pow) - 1):
