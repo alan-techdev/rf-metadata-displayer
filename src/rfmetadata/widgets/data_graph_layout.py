@@ -2,7 +2,7 @@ from datetime import datetime
 
 import matplotlib.dates as mdates
 import numpy as np
-from matplotlib import colormaps, cm
+from matplotlib import cm, colormaps
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.colors import Normalize
 from matplotlib.figure import Figure
