@@ -6,7 +6,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "rfmetadata" # package name same as project name 
-version = "1.0.0"
+version = "1.0.1"
 description = "RF MetaData Displayer"
 authors = [
    {name="Iso"}, 
@@ -75,7 +75,7 @@ test = [
   "pytest (>=8.4.0); python_version >='3.9' and python_version <='3.14'",
   "pytest-cov (>=6); python_version >='3.9' and python_version <='3.13'",
   "pytest-mock (>=3.14.0); python_version >='3.9' and python_version <='3.14'",
-   "pyside6",
+   "pyside6 (>=6.6.1); python_version >= '3.8' and python_version <= '3.12'",
 ]
 docs =[
    "Sphinx (<=8.2.3);  python_version >='3.11' and python_version <='3.14'",

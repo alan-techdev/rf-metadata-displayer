@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import QMainWindow
+
 from rfmetadata.windows.main_window import MainWindow
 
 

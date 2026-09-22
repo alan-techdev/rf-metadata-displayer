@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import QMainWindow
+
 from rfmetadata.windows.query_result_window import TableResultsWindow
 
 
