@@ -59,11 +59,13 @@ urls.Changelog = "https://github.com/alan-techdev/rf-metadata-displayer/blob/mas
 ### Dependency Constraints, aka Requirements ###
 # see https://python-poetry.org/docs/dependency-specification/#multiple-constraints-project
 dependencies = [
-  "pyside6 (>=6.8.0); python_version >= '3.8' and python_version <= '3.1'",
-  "flask",
-  "scipy",
-  "matplotlib (>=3.10.1); python_version>='3.10' and python_version <='3.13'",
-  "requests"
+    "pyside6>=6.6.1,<6.7; python_version >= '3.8' and python_version < '3.9'",
+    "pyside6>=6.6.1,<6.10; python_version >= '3.9' and python_version < '3.13'",
+    "pyside6>=6.10.0; python_version >= '3.13' and python_version < '3.15'",
+    "flask",
+    "scipy",
+    "matplotlib (>=3.10.1); python_version>='3.10' and python_version <='3.13'",
+    "requests",
 ]
 
 
@@ -72,11 +74,13 @@ dependencies = [
 ## $ pip install -e . [test]
 [project.optional-dependencies]
 test = [
-  "pytest (>=8.4.0); python_version >='3.9' and python_version <='3.14'",
-  "pytest-cov (>=6); python_version >='3.9' and python_version <='3.13'",
-  "pytest-mock (>=3.14.0); python_version >='3.9' and python_version <='3.14'",
-  "pyside6 (>=6.8.0); python_version >= '3.8' and python_version <= '3.13'",
-  "pytest-qt (>=4.4)",
+    "pytest (>=8.4.0); python_version >='3.9' and python_version <='3.14'",
+    "pytest-cov (>=6); python_version >='3.9' and python_version <='3.13'",
+    "pytest-mock (>=3.14.0); python_version >='3.9' and python_version <='3.14'",
+    "pyside6>=6.6.1,<6.7; python_version >= '3.8' and python_version < '3.9'",
+    "pyside6>=6.6.1,<6.10; python_version >= '3.9' and python_version < '3.13'",
+    "pyside6>=6.10.0; python_version >= '3.13' and python_version < '3.15'",
+    "pytest-qt (>=4.4)",
 ]
 docs =[
    "Sphinx (<=8.2.3);  python_version >='3.11' and python_version <='3.14'",
