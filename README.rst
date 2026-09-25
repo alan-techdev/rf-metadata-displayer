@@ -20,11 +20,11 @@ COMMUNITY VERSION
 
 Change Log
 ==========
- `Change Log <https://github.com/alanmehio/rf-metadata-displayer/blob/main/CHANGELOG.rst>`_.
+ `Change Log <https://github.com/alan-techdev/rf-metadata-displayer/blob/main/CHANGELOG.rst>`_.
 
 Quickstart
 ==========
-| `Usage <https://github.com/alanmehio/rf-metadata-displayer/blob/main/docs/source/contents/usage.rst>`_.
+| `Usage <https://github.com/alan-techdev/rf-metadata-displayer/blob/main/docs/source/contents/usage.rst>`_.
 
 
 License
@@ -36,7 +36,7 @@ License
 
 .. LINKS
 
-.. _GNU Affero General Public License v3.0: https://github.com/alanmehio/rf-metadata-displayer/blob/main/LICENSE
+.. _GNU Affero General Public License v3.0: https://github.com/alan-techdev/rf-metadata-displayer/blob/main/LICENSE
 
 
 
@@ -45,9 +45,9 @@ License
 .. Build Status
 .. Github Actions: Test Workflow Status for specific branch <branch>
 
-.. |build| image::  https://github.com/alanmehio/rf-metadata-displayer/actions/workflows/ci_cd.yaml/badge.svg
+.. |build| image::  https://github.com/alan-techdev/rf-metadata-displayer/actions/workflows/ci_cd.yaml/badge.svg
     :alt: GitHub Workflow Status (branch)
-    :target: https://github.com/alanmehio/rf-metadata-displayer/actions
+    :target: https://github.com/alan-techdev/rf-metadata-displayer/actions
 
 
 .. Documentation
@@ -77,11 +77,11 @@ License
 
 .. Github Releases & Tags
 
-.. |commits_since_specific_tag_on_main| image:: https://img.shields.io/github/commits-since/alanmehio/rf-metadata-displayer/release-1.0.0/main?color=blue&logo=github
+.. |commits_since_specific_tag_on_main| image:: https://img.shields.io/github/commits-since/alan-techdev/rf-metadata-displayer/release-1.0.0/main?color=blue&logo=github
     :alt: GitHub commits since tagged version (branch)
-    :target: https://github.com/alanmehio/rf-metadata-displayer/compare/1.0.0..main
+    :target: https://github.com/alan-techdev/rf-metadata-displayer/compare/1.0.0..main
 
-.. |commits_since_latest_github_release| image:: https://img.shields.io/github/commits-since/alanmehio/rf-metadata-displayer/latest?color=blue&logo=semver&sort=semver
+.. |commits_since_latest_github_release| image:: https://img.shields.io/github/commits-since/alan-techdev/rf-metadata-displayer/latest?color=blue&logo=semver&sort=semver
     :alt: GitHub commits since latest release (by SemVer)
 
 .. LICENSE (eg AGPL, MIT)
@@ -89,7 +89,7 @@ License
 
 .. |gh-lic| image:: https://img.shields.io/badge/license-GNU_Affero-orange
     :alt: GitHub
-    :target: https://github.com/alanmehio/rf-metadata-displayer/blob/main/LICENSE
+    :target: https://github.com/alan-techdev/rf-metadata-displayer/blob/main/LICENSE
 
 
 .. Ruff linter for Fast Python Linting
@@ -105,6 +105,6 @@ License
 .. Local Image as link
 
 
-.. |rf_simulator| image:: https://raw.githubusercontent.com/alanmehio/rf-metadata-displayer/main/media/rf-simulator.gif
+.. |rf_simulator| image:: https://raw.githubusercontent.com/alan-techdev/rf-metadata-displayer/main/media/rf-simulator.gif
                 :alt: RF Metadata Displayer
 

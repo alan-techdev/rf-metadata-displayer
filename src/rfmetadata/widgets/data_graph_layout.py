@@ -1,16 +1,21 @@
-from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.figure import Figure
-from rfmetadata.signal_manager.data_signal_manager import signal_manager, graph_type_manager
-import matplotlib.dates as mdates
 from datetime import datetime
+
+import matplotlib.dates as mdates
 import numpy as np
-from scipy.interpolate import griddata
-from matplotlib import cm
+from matplotlib import cm, colormaps
+from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.colors import Normalize
+from matplotlib.figure import Figure
+from scipy.interpolate import griddata
+
+from rfmetadata.signal_manager.data_signal_manager import (
+    graph_type_manager,
+    signal_manager,
+)
 
 
 class DataGraph3D(FigureCanvas):
-    def __init__(self, figure:Figure=None)->None:        
+    def __init__(self, figure:Figure=None)->None:
         self.figure = Figure()
         super().__init__(figure)
 
@@ -19,21 +24,21 @@ class DataGraph3D(FigureCanvas):
 
         self.type = "scatter"
 
-        self.data = []
-        self.freq = []
-        self.pow = []
-        self.time = []
+        self.data:list = []
+        self.freq:list = []
+        self.pow:list= []
+        self.time:list = []
 
 
         self.ax = self.figure.add_subplot(projection='3d')
         self.ax.set_title("Data Graph")
-        
+
         signal_manager.data_signal.connect(self.receive_data)
         graph_type_manager.data_signal.connect(self.set_type)
 
-        
-                    
-    def receive_data(self, data):
+
+
+    def receive_data(self, data:list) -> None:
         self.data = data
         self.freq.clear()
         self.pow.clear()
@@ -47,17 +52,17 @@ class DataGraph3D(FigureCanvas):
 
         self.draw_graph()
 
-    def set_type(self, type):
+    def set_type(self, type:str) -> None:
         self.type = type
         self.draw_graph()
 
-    
-    def draw_graph(self):
+
+    def draw_graph(self) -> None:
 
         if not (self.freq and self.pow and self.time):
             return
 
-        
+
         if self.type == "scatter":
             self.figure.clear()
             self.ax = self.figure.add_subplot(projection='3d')
@@ -101,13 +106,13 @@ class DataGraph3D(FigureCanvas):
             POWER = np.nan_to_num(POWER, nan=np.nanmin(power))
 
 
-            surf = self.ax.plot_surface(
+            self.ax.plot_surface(
                 FREQ, TIME, POWER,
                 cmap='inferno',
                 linewidth=0.5,
                 antialiased=True
             )
-            
+
             self.ax.set_title("Data Graph")
             self.ax.set_xlabel("Frequency")
             self.ax.set_ylabel("Time")
@@ -125,7 +130,7 @@ class DataGraph3D(FigureCanvas):
 
             # Normalizing frequency values for colormap
             norm = Normalize(vmin=min(self.freq), vmax=max(self.freq))
-            cmap = cm.get_cmap('viridis')
+            cmap = colormaps.get_cmap('viridis')
 
             # Plotting each segment with color based on frequency
             for i in range(len(self.pow) - 1):
@@ -151,5 +156,3 @@ class DataGraph3D(FigureCanvas):
             self.figure.autofmt_xdate()
 
             self.draw()
-
-

@@ -6,7 +6,7 @@
 
 # Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
 # Tutorial https://docs.docker.com/guides/python/containerize/
-# Exammple https://docs.docker.com/reference/samples/python/
+# Example https://docs.docker.com/reference/samples/python/
 
 ARG PYTHON_VERSION=3.13
 FROM python:${PYTHON_VERSION}-slim

@@ -37,13 +37,13 @@ def get_templated_vars():
         'TemplatedVariables',
         (),
         dict(
-            project_slug='rf-surveillance-node',
-            package_name='rfnode',
+            project_slug='rf-metadata-displayer',
+            package_name='rfmetadata',
             author_name='Alan',
             year='2025',
             version='1.0.0',
-            github_username='alanmehio',
-            repo_name='rf-surveillance-node',
+            github_username='alan-techdev',
+            repo_name='rf-metadata-displayer',
         ),
     )
 

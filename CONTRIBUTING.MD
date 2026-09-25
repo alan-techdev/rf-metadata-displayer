@@ -17,9 +17,9 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at [https://github.com/alanmehio/rf-surveillance/issues](https://github.com/alanmehio/rf-surveillance/issues).
+Report bugs at [https://github.com/alan-techdev/rf-metadata-displayer/issues](https://github.com/alan-techdev/rf-metadata-displayer/issues).
 
-Stambling upon a Bug means encountering different behaviour than the expected/advertised one. When you are reporting a bug, please include the following infromation by filling in [the template](https://github.com/alanmehio/rf-surveillance/blob/main/.github/ISSUE_TEMPLATE/bug_report.md).
+Stumbling upon a Bug means encountering different behavior than the expected/advertised one. When you are reporting a bug, please include the following information by filling in [the template](https://github.com/alan-techdev/rf-metadata-displayer/blob/main/.github/ISSUE_TEMPLATE/bug_report.md).
 
 
 * Your operating system name and version.
@@ -41,7 +41,7 @@ See [Contributor Setup](#Setting-Up-the-Code-for-Local-Development) to get start
 
 ### Write Documentation
 
-rf surveillance could always use more documentation, whether as part of the official rf surveillance docs, in docstrings, etc.
+rf surveillance could always use more documentation, whether as part of the official rf surveillance docs, in doc strings, etc.
 
 If you want to review your changes on the documentation locally, you can do:
 
@@ -55,7 +55,7 @@ You can open it in your browser at http://127.0.0.1:8000 !
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at [https://github.com/alanmehio/rf-surveillance/issues](https://github.com/alanmehio/rf-surveillance/issues).
+The best way to send feedback is to file an issue at [https://github.com/alan-techdev/rf-metadata-displayer/issues](https://github.com/alan-techdev/rf-metadata-displayer/issues).
 
 If you are proposing a feature:
 
@@ -65,22 +65,22 @@ If you are proposing a feature:
 
 ## Setting Up the Code for Local Development
 
-Here's how to set up `rf surveillance` for local development.
+Here's how to set up `rf metadata-displayer` for local development.
 
-1. Fork the `rf surveillance` repo on GitHub.
+1. Fork the `rf metadata-displayer` repo on GitHub.
 2. Clone your fork locally:
 
 ```bash
-git clone git@github.com:alanmehio/rf-surveillance.git
+git clone git@github.com:alan-techdev/rf-metadata-displayer.git
 ```
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenv installed, this is how you set up your fork for local development:
+3. Install your local copy into a virtualenv. Assuming you have virtualenv installed, this is how you set up your fork for local development with test dependencies:
 
 ```bash
-cd rf-surveillance
+cd rf-metadata-displayer
 virtualenv env --python=python3
 source env/bin/activate
-pip install -e .
+pip install -e . [test]
 ```
 
 4. Create a branch for local development:
@@ -99,7 +99,7 @@ alias tox='PKG_VERSION=$(./scripts/parse_version.py) tox'
 tox
 ```
 
-Please note that tox runs test test suite against multiple python versions, if they are found available on the host machine.
+Please note that tox runs test suite against multiple python versions, if they are found available on the host machine.
 
 If you want to produce a built tar.gz and wheel distributions:
 
@@ -111,15 +111,36 @@ tox -e check && tox -e build
 
 You report will be placed to `htmlcov` directory. Please do not include this directory to your commits, accidentally.
 
-7. Commit your changes and push your branch to GitHub:
+7. CI/CD check 
+below are the command to use to make sure your CI/CD is green
+```bash
+#Do Type Checking
+tox -e type -v -s false
+
+# Test Suite Against Wheel
+tox -e wheel-test -s false
+
+# Combine Coverage (dev, sdist, wheel) & make Reports
+tox -e coverage --sitepackages -v -s false
+
+# Ruff check 
+tox -e check -v -s false
+
+# Static type Checking Dependencies
+tox -s false -e pin-deps 
+
+# Test suite 
+ tox -v -s false | tee test_output.log
+
+8. Commit your changes and push your branch to GitHub:
 
 ```bash
-git add -p
+git add .
 git commit -m "Your detailed description of your changes."
 git push origin name-of-your-bugfix-or-feature
 ```
 
-8. Submit a pull request through the GitHub website.
+9. Submit a pull request through the GitHub website.
 
 ## Contributor Guidelines
 
@@ -147,16 +168,16 @@ Tox uses pytest under the hood, hence it supports the same syntax for selecting 
 For further information please consult the [pytest usage docs](http://pytest.org/en/latest/example/index.html).
 
 
-To run all tests using various versions of python in virtualenvs defined in tox.ini, just run tox:
+To run all tests using various versions of python in virtual envs defined in tox.ini, just run tox:
 
 ```bash
 tox
 ```
 
-To run all tests using python 3.8:
+To run all tests using python 3.13.5(it needs to be installed):
 
 ```bash
-tox -e py38
+tox -e py313
 ```
 
 To only run test cases matching the string 'smoke_test', using python 3.8:
@@ -231,10 +252,25 @@ For other issues: encourage friendly discussion, moderate debate, offer your tho
 
 ### Process: Roadmap
 
-The roadmap(issues) located [here](https://github.com/alanmehio/rf-surveillance/issues)
+The roadmap(issues) located [here](https://github.com/alan-techdev/rf-metadata-displayer/issues)
 
 Due dates are flexible.
 
 ### Process: Release:
 
+* bump the version in the toml file. Version number depends on weather major, minor or patch release
+* bump the same version in the src/rfmetadata/__version__.py module
 * Follow semantic versioning. Look at: [http://semver.org](http://semver.org)
+* Commit and push all changes 
+```
+$ git add .
+$ git commit -m " your comments here"
+$ git push HEAD
+```
+* Make sure  CI/CD is green from the github badge
+* Release to pypi test server 
+```
+$ git tag --list # list the tag
+$ git tag test-1.0.0 # 1.0.0 is the new version as setup above
+$ git push origin test-1.0.0 # push to origin or remote repository
+```

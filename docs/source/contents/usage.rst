@@ -59,7 +59,7 @@ See the server's response when the displayer application queries it:
 If you don't run the server and you try to search in the displayer, you will get errors:
 
 .. image:: ../_static/rfmetadataErrors.png
-   :alt: rfmetada without the server.
+   :alt: rfmetadata without the server.
    :width: 900px
    :align: center
 
