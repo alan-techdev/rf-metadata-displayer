@@ -160,7 +160,11 @@ jobs:
       - name: Install Qt dependencies
         run: |
             sudo apt-get update
-            sudo apt-get install -y libegl1
+            sudo apt-get install -y libgl1 libegl1 libxkbcommon0
+
+      - name: Set Qt platform
+        run: |
+            echo "QT_QPA_PLATFORM=offscreen" >> "$GITHUB_ENV"
 
       ###### TEST SUITE RUN against Edit and Sdist ######
       - name: Build and Test 'Edit' and 'Sdist' & Build Wheel(s)
@@ -220,6 +224,7 @@ jobs:
 
       ## UPLOAD CI ARTIFACTS - Coverage Reports ##
       - name: "Upload Test Coverage as Artifacts"
+        if: ${{ !env.ACT }}
         uses: actions/upload-artifact@v4.6.0
         with:
           name: all_coverage_raw
@@ -241,6 +246,7 @@ jobs:
 
       ## UPLOAD CI ARTIFACTS - Distro Build(s), 1 sdist and 1 or more wheels ##
       - name: Upload Source & Wheel distributions as Artefacts
+        if: ${{ !env.ACT }}
         uses: actions/upload-artifact@v4.6.0
         with:
           name: dist-${{ matrix.platform }}-${{ matrix.python-version }}
