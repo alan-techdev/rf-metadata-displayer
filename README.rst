@@ -7,7 +7,7 @@ COMMUNITY VERSION
 .. start-badges see https://shields.io/badges and collection see https://github.com/inttter/md-badges
 
 | |build| |release_version| |wheel|
-| |docs| |pylint| |supported_versions|
+| |docs| |supported_versions| |contributors|
 | |ruff| |gh-lic| |commits_since_specific_tag_on_main|
 
 
@@ -56,11 +56,6 @@ License
     :alt: Read the Docs (version)
     :target: https://rf-metadata-displayer.readthedocs.io/en/latest/
 
-.. PyLint
-
-.. |pylint| image:: https://img.shields.io/badge/linting-pylint-yellowgreen
-    :target: https://github.com/pylint-dev/pylint
-
 .. PyPI
 
 .. |release_version| image:: https://img.shields.io/pypi/v/rfmetadata
@@ -74,6 +69,10 @@ License
 .. |supported_versions| image:: https://img.shields.io/pypi/pyversions/rfmetadata?color=blue&label=python&logo=python&logoColor=%23ccccff
     :alt: Supported Python versions
     :target: https://pypi.org/project/rfmetadata
+
+.. |contributors| image:: https://img.shields.io/github/contributors/alan-techdev/rf-metadata-displayer?color=blue&logo=github
+    :alt: GitHub contributors
+    :target: https://github.com/alan-techdev/rf-metadata-displayer/graphs/contributors
 
 .. Github Releases & Tags
 
